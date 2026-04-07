@@ -1,0 +1,1340 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eficiência Energética: O Futuro Sustentável</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: oklch(0.4 0.12 142);
+            --primary-foreground: oklch(1 0 0);
+            --sage-green: oklch(0.5 0.08 142);
+            --forest-green: oklch(0.4 0.12 142);
+            --burnt-orange: oklch(0.45 0.1 35);
+            --background: oklch(1 0 0);
+            --foreground: oklch(0.235 0.015 65);
+            --card-bg: oklch(0.98 0.001 286.375);
+            --border-color: oklch(0.92 0.004 286.32);
+            --accent-light: oklch(0.967 0.001 286.375);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--background);
+            color: var(--foreground);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        @media (min-width: 768px) {
+            .container {
+                padding: 0 1.5rem;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .container {
+                padding: 0 2rem;
+            }
+        }
+
+        /* Navigation */
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        nav .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 4rem;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: var(--primary);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .logo:hover {
+            color: var(--sage-green);
+        }
+
+        .logo svg {
+            width: 1.5rem;
+            height: 1.5rem;
+        }
+
+        .nav-menu {
+            display: none;
+            gap: 0.25rem;
+        }
+
+        @media (min-width: 768px) {
+            .nav-menu {
+                display: flex;
+            }
+        }
+
+        .nav-menu a {
+            padding: 0.5rem 0.75rem;
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--foreground);
+            text-decoration: none;
+            border-radius: 0.375rem;
+            transition: all 0.2s;
+        }
+
+        .nav-menu a:hover {
+            color: var(--primary);
+            background-color: var(--accent-light);
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            min-height: 600px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        @media (min-width: 768px) {
+            .hero {
+                min-height: 700px;
+            }
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: url('https://d2xsxph8kpxj0f.cloudfront.net/310519663175874071/FnsGQWebHyjzCwDnoFzhZu/hero-energia-renovavel-32KzMH6mNjJ95yVQUzHtFy.webp');
+            background-size: cover;
+            background-position: center;
+            filter: brightness(0.7);
+            z-index: 1;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 1));
+            z-index: 2;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 3;
+            text-align: center;
+            max-width: 48rem;
+            margin: 0 auto;
+            padding: 0 1rem;
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        .hero h1 {
+            font-size: 2.25rem;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+        }
+
+        @media (min-width: 768px) {
+            .hero h1 {
+                font-size: 3.75rem;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .hero h1 {
+                font-size: 4.5rem;
+            }
+        }
+
+        .hero p {
+            font-size: 1.125rem;
+            color: rgba(55, 65, 81, 0.9);
+            margin-bottom: 1.5rem;
+            max-width: 32rem;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            justify-content: center;
+            padding-top: 1.5rem;
+        }
+
+        @media (min-width: 640px) {
+            .hero-buttons {
+                flex-direction: row;
+            }
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            padding: 0.75rem 2rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            color: var(--primary-foreground);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--sage-green);
+            transform: scale(1.05);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+
+        .btn-secondary:hover {
+            background-color: rgba(64, 120, 109, 0.1);
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10;
+            animation: bounce 2s infinite;
+        }
+
+        .scroll-indicator svg {
+            width: 1.5rem;
+            height: 1.5rem;
+            color: var(--primary);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateX(-50%) translateY(0);
+            }
+            50% {
+                transform: translateX(-50%) translateY(10px);
+            }
+        }
+
+        /* Content Section */
+        .content-section {
+            padding: 4rem 0;
+        }
+
+        @media (min-width: 768px) {
+            .content-section {
+                padding: 6rem 0;
+            }
+        }
+
+        .content-section.light-bg {
+            background-color: var(--background);
+        }
+
+        .content-section.accent-bg {
+            background-color: rgba(64, 120, 109, 0.05);
+        }
+
+        .content-flex {
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        @media (min-width: 768px) {
+            .content-flex {
+                flex-direction: row;
+            }
+        }
+
+        .content-flex.reverse {
+            flex-direction: column-reverse;
+        }
+
+        @media (min-width: 768px) {
+            .content-flex.reverse {
+                flex-direction: row-reverse;
+            }
+        }
+
+        .content-image {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .content-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 0.5rem;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s;
+        }
+
+        .content-image img:hover {
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+        }
+
+        .content-text {
+            flex: 1;
+            space-y: 1.5rem;
+        }
+
+        .content-text h2 {
+            font-size: 1.875rem;
+            color: var(--primary);
+            margin-bottom: 0.75rem;
+        }
+
+        @media (min-width: 768px) {
+            .content-text h2 {
+                font-size: 2.25rem;
+            }
+        }
+
+        .content-text h3 {
+            font-size: 1.125rem;
+            color: rgba(55, 65, 81, 0.7);
+            margin-bottom: 1rem;
+        }
+
+        .content-text p {
+            margin-bottom: 1rem;
+            color: rgba(55, 65, 81, 0.8);
+            line-height: 1.8;
+        }
+
+        .feature-list {
+            margin-top: 1.5rem;
+            space-y: 0.75rem;
+        }
+
+        .feature-item {
+            display: flex;
+            gap: 0.75rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .feature-item svg {
+            width: 1.25rem;
+            height: 1.25rem;
+            color: var(--primary);
+            flex-shrink: 0;
+            margin-top: 0.25rem;
+        }
+
+        .feature-item-text {
+            flex: 1;
+        }
+
+        .feature-item-title {
+            font-weight: 600;
+            color: var(--foreground);
+        }
+
+        .feature-item-desc {
+            font-size: 0.875rem;
+            color: rgba(55, 65, 81, 0.7);
+        }
+
+        /* Benefits Section */
+        .benefits-section {
+            padding: 4rem 0;
+            background-color: rgba(64, 120, 109, 0.05);
+        }
+
+        @media (min-width: 768px) {
+            .benefits-section {
+                padding: 6rem 0;
+            }
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-header h2 {
+            font-size: 1.875rem;
+            color: var(--foreground);
+            margin-bottom: 0.75rem;
+        }
+
+        @media (min-width: 768px) {
+            .section-header h2 {
+                font-size: 2.25rem;
+            }
+        }
+
+        .section-header p {
+            font-size: 1.125rem;
+            color: rgba(55, 65, 81, 0.7);
+        }
+
+        .divider {
+            width: 4rem;
+            height: 0.25rem;
+            background-color: var(--primary);
+            margin: 1rem auto 0;
+            border-radius: 9999px;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+
+        @media (min-width: 768px) {
+            .benefits-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .benefits-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
+        .benefit-card {
+            padding: 1.5rem 2rem;
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 0.5rem;
+            transition: all 0.3s;
+        }
+
+        .benefit-card:hover {
+            border-color: var(--primary);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transform: translateY(-4px);
+        }
+
+        .benefit-icon {
+            width: 3rem;
+            height: 3rem;
+            background-color: rgba(64, 120, 109, 0.1);
+            border-radius: 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+            transition: background-color 0.3s;
+        }
+
+        .benefit-card:hover .benefit-icon {
+            background-color: rgba(64, 120, 109, 0.2);
+        }
+
+        .benefit-icon svg {
+            width: 1.5rem;
+            height: 1.5rem;
+            color: var(--primary);
+        }
+
+        .benefit-card h3 {
+            font-size: 1.125rem;
+            color: var(--foreground);
+            margin-bottom: 0.75rem;
+        }
+
+        .benefit-card p {
+            font-size: 0.875rem;
+            color: rgba(55, 65, 81, 0.7);
+        }
+
+        /* Stats Section */
+        .stats-section {
+            padding: 4rem 0;
+            background-color: rgba(64, 120, 109, 0.05);
+        }
+
+        @media (min-width: 768px) {
+            .stats-section {
+                padding: 6rem 0;
+            }
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+
+        @media (min-width: 768px) {
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .stats-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
+        .stat-card {
+            text-align: center;
+            padding: 1.5rem;
+            background-color: var(--background);
+            border: 1px solid var(--border-color);
+            border-radius: 0.5rem;
+            transition: border-color 0.3s;
+        }
+
+        .stat-card:hover {
+            border-color: rgba(64, 120, 109, 0.3);
+        }
+
+        .stat-number {
+            font-size: 2.25rem;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 800;
+            color: var(--primary);
+        }
+
+        @media (min-width: 768px) {
+            .stat-number {
+                font-size: 3rem;
+            }
+        }
+
+        .stat-label {
+            font-size: 0.875rem;
+            color: rgba(55, 65, 81, 0.7);
+            margin-top: 1rem;
+            font-weight: 500;
+        }
+
+        /* Tips Section */
+        .tips-section {
+            padding: 4rem 0;
+            background-color: var(--background);
+        }
+
+        @media (min-width: 768px) {
+            .tips-section {
+                padding: 6rem 0;
+            }
+        }
+
+        .tips-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+
+        @media (min-width: 768px) {
+            .tips-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .tips-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .tip-card {
+            padding: 1.5rem;
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 0.5rem;
+            transition: all 0.3s;
+        }
+
+        .tip-card:hover {
+            border-color: rgba(64, 120, 109, 0.3);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        .tip-header {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .tip-icon {
+            width: 2.5rem;
+            height: 2.5rem;
+            background-color: rgba(64, 120, 109, 0.1);
+            border-radius: 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            transition: background-color 0.3s;
+        }
+
+        .tip-card:hover .tip-icon {
+            background-color: rgba(64, 120, 109, 0.2);
+        }
+
+        .tip-icon svg {
+            width: 1.25rem;
+            height: 1.25rem;
+            color: var(--primary);
+        }
+
+        .tip-content {
+            flex: 1;
+        }
+
+        .tip-card h3 {
+            font-size: 1rem;
+            color: var(--foreground);
+            margin-bottom: 0.5rem;
+        }
+
+        .tip-card p {
+            font-size: 0.875rem;
+            color: rgba(55, 65, 81, 0.7);
+            margin-bottom: 0.75rem;
+        }
+
+        .tip-savings {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            background-color: rgba(64, 120, 109, 0.1);
+            color: var(--primary);
+            font-size: 0.75rem;
+            font-weight: 600;
+            border-radius: 9999px;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 4rem 0;
+            background-color: var(--primary);
+            color: var(--primary-foreground);
+            text-align: center;
+        }
+
+        @media (min-width: 768px) {
+            .cta-section {
+                padding: 6rem 0;
+            }
+        }
+
+        .cta-section h2 {
+            font-size: 1.875rem;
+            margin-bottom: 1.5rem;
+        }
+
+        @media (min-width: 768px) {
+            .cta-section h2 {
+                font-size: 2.25rem;
+            }
+        }
+
+        .cta-section p {
+            font-size: 1.125rem;
+            margin-bottom: 2rem;
+            max-width: 32rem;
+            margin-left: auto;
+            margin-right: auto;
+            opacity: 0.95;
+        }
+
+        .cta-section .btn {
+            background-color: var(--primary-foreground);
+            color: var(--primary);
+        }
+
+        .cta-section .btn:hover {
+            background-color: rgba(255, 255, 255, 0.9);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--foreground);
+            color: var(--background);
+            padding: 4rem 0 2rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        @media (min-width: 768px) {
+            .footer-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
+        .footer-section h4 {
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+            letter-spacing: 0.05em;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            font-size: 0.875rem;
+            transition: color 0.2s;
+        }
+
+        .footer-section a:hover {
+            color: var(--background);
+        }
+
+        .footer-brand {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer-brand svg {
+            width: 1.5rem;
+            height: 1.5rem;
+        }
+
+        .footer-brand span {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            font-size: 1.125rem;
+        }
+
+        .footer-brand-desc {
+            font-size: 0.875rem;
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.6;
+        }
+
+        .footer-contact {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.875rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-contact svg {
+            width: 1rem;
+            height: 1rem;
+        }
+
+        .footer-divider {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 2rem;
+            margin-top: 2rem;
+        }
+
+        .footer-bottom {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        @media (min-width: 768px) {
+            .footer-bottom {
+                flex-direction: row;
+                justify-content: space-between;
+            }
+        }
+
+        .footer-bottom p {
+            font-size: 0.875rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .footer-links a {
+            font-size: 0.875rem;
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .footer-links a:hover {
+            color: var(--background);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <a href="#" class="logo">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 2c1.1 0 2 .9 2 2v6h6c1.1 0 2 .9 2 2s-.9 2-2 2h-6v6c0 1.1-.9 2-2 2s-2-.9-2-2v-6H4c-1.1 0-2-.9-2-2s.9-2 2-2h6V4c0-1.1.9-2 2-2z"/>
+                </svg>
+                EnergiaSmart
+            </a>
+            <div class="nav-menu">
+                <a href="#hero">Início</a>
+                <a href="#o-que-e">O que é</a>
+                <a href="#beneficios">Benefícios</a>
+                <a href="#residencial">Residencial</a>
+                <a href="#industrial">Industrial</a>
+                <a href="#tecnologias">Tecnologias</a>
+                <a href="#dados">Dados</a>
+                <a href="#contato">Contato</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-content">
+            <h1>Eficiência Energética: O Futuro Sustentável</h1>
+            <p>Descubra como fazer mais com menos energia e transformar seu consumo em economia e sustentabilidade.</p>
+            <div class="hero-buttons">
+                <a href="#o-que-e" class="btn btn-primary">
+                    Saiba Mais
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 1.25rem; height: 1.25rem;">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </a>
+                <a href="#dados" class="btn btn-secondary">Ver Dados</a>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
+            </svg>
+        </div>
+    </section>
+
+    <!-- O que é Eficiência Energética -->
+    <section class="content-section light-bg" id="o-que-e">
+        <div class="container">
+            <div class="content-flex">
+                <div class="content-text">
+                    <h2>O que é Eficiência Energética?</h2>
+                    <h3>Otimização inteligente do consumo de energia</h3>
+                    <p>A eficiência energética consiste em obter o mesmo serviço ou resultado (iluminação, aquecimento, produção industrial, etc.) utilizando menos energia. É a otimização do uso de recursos energéticos para minimizar desperdícios.</p>
+                    <p>Não se trata apenas de economizar energia, mas de transformar a forma como consumimos recursos. Cada kilowatt economizado representa menos pressão sobre o meio ambiente e mais recursos disponíveis para o futuro.</p>
+                    <p>A eficiência energética é o primeiro passo rumo a uma matriz energética mais limpa e sustentável. É a base para qualquer estratégia de sustentabilidade corporativa ou pessoal.</p>
+                </div>
+                <div class="content-image">
+                    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663175874071/FnsGQWebHyjzCwDnoFzhZu/section-residencial-jeHrbJek9oS9PdjSVBvJ25.webp" alt="Smart Home com Eficiência Energética">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefícios -->
+    <section class="benefits-section" id="beneficios">
+        <div class="container">
+            <div class="section-header">
+                <h2>Benefícios da Eficiência Energética</h2>
+                <p>Impactos positivos que vão além da economia financeira</p>
+                <div class="divider"></div>
+            </div>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+                        </svg>
+                    </div>
+                    <h3>Economia de Custos</h3>
+                    <p>Redução significativa nas contas de energia, tanto para residências quanto para indústrias.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 2c1.1 0 2 .9 2 2v6h6c1.1 0 2 .9 2 2s-.9 2-2 2h-6v6c0 1.1-.9 2-2 2s-2-.9-2-2v-6H4c-1.1 0-2-.9-2-2s.9-2 2-2h6V4c0-1.1.9-2 2-2z"/>
+                        </svg>
+                    </div>
+                    <h3>Sustentabilidade</h3>
+                    <p>Diminuição da emissão de gases de efeito estufa e menor pressão sobre recursos naturais.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+                        </svg>
+                    </div>
+                    <h3>Segurança Energética</h3>
+                    <p>Redução da dependência de fontes externas e maior estabilidade do sistema elétrico.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+                        </svg>
+                    </div>
+                    <h3>Competitividade</h3>
+                    <p>Empresas mais eficientes têm custos operacionais menores e maior lucratividade.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Setor Residencial -->
+    <section class="content-section light-bg" id="residencial">
+        <div class="container">
+            <div class="content-flex reverse">
+                <div class="content-text">
+                    <h2>Eficiência no Setor Residencial</h2>
+                    <h3>Transforme sua casa em um espaço inteligente e econômico</h3>
+                    <p>O setor residencial é responsável por uma parcela significativa do consumo energético. Pequenas mudanças podem resultar em grandes economias.</p>
+                    <div class="feature-list">
+                        <div class="feature-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+                            </svg>
+                            <div class="feature-item-text">
+                                <div class="feature-item-title">Lâmpadas LED</div>
+                                <div class="feature-item-desc">Consomem até 80% menos energia</div>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+                            </svg>
+                            <div class="feature-item-text">
+                                <div class="feature-item-title">Eletrodomésticos Procel A</div>
+                                <div class="feature-item-desc">Certificação de máxima eficiência</div>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+                            </svg>
+                            <div class="feature-item-text">
+                                <div class="feature-item-title">Painéis Solares</div>
+                                <div class="feature-item-desc">Energia limpa e renovável</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="content-image">
+                    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663175874071/FnsGQWebHyjzCwDnoFzhZu/section-residencial-jeHrbJek9oS9PdjSVBvJ25.webp" alt="Casa Inteligente com Eficiência Energética">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Setor Industrial -->
+    <section class="content-section accent-bg" id="industrial">
+        <div class="container">
+            <div class="content-flex">
+                <div class="content-text">
+                    <h2>Eficiência no Setor Industrial</h2>
+                    <h3>Otimização de processos para máxima produtividade</h3>
+                    <p>A indústria é o maior consumidor de energia. Implementar medidas de eficiência resulta em redução significativa de custos operacionais e maior competitividade.</p>
+                    <div class="feature-list">
+                        <div class="feature-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 2c1.1 0 2 .9 2 2v6h6c1.1 0 2 .9 2 2s-.9 2-2 2h-6v6c0 1.1-.9 2-2 2s-2-.9-2-2v-6H4c-1.1 0-2-.9-2-2s.9-2 2-2h6V4c0-1.1.9-2 2-2z"/>
+                            </svg>
+                            <div class="feature-item-text">
+                                <div class="feature-item-title">Motores de Alta Eficiência</div>
+                                <div class="feature-item-desc">Redução de até 5% no consumo</div>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 2c1.1 0 2 .9 2 2v6h6c1.1 0 2 .9 2 2s-.9 2-2 2h-6v6c0 1.1-.9 2-2 2s-2-.9-2-2v-6H4c-1.1 0-2-.9-2-2s.9-2 2-2h6V4c0-1.1.9-2 2-2z"/>
+                            </svg>
+                            <div class="feature-item-text">
+                                <div class="feature-item-title">Recuperação de Calor</div>
+                                <div class="feature-item-desc">Reutilização de energia residual</div>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 2c1.1 0 2 .9 2 2v6h6c1.1 0 2 .9 2 2s-.9 2-2 2h-6v6c0 1.1-.9 2-2 2s-2-.9-2-2v-6H4c-1.1 0-2-.9-2-2s.9-2 2-2h6V4c0-1.1.9-2 2-2z"/>
+                            </svg>
+                            <div class="feature-item-text">
+                                <div class="feature-item-title">Gestão em Tempo Real</div>
+                                <div class="feature-item-desc">Monitoramento e otimização contínua</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="content-image">
+                    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663175874071/FnsGQWebHyjzCwDnoFzhZu/section-industrial-U7w4ZfA3TTgHH6Sp5rsiJ8.webp" alt="Fábrica com Eficiência Energética">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tecnologias -->
+    <section class="content-section light-bg" id="tecnologias">
+        <div class="container">
+            <div class="content-flex reverse">
+                <div class="content-text">
+                    <h2>Tecnologias Emergentes</h2>
+                    <h3>Inovações que transformam a eficiência energética</h3>
+                    <p>A tecnologia é a chave para maximizar a eficiência energética. Novas soluções permitem monitoramento, previsão e otimização em tempo real.</p>
+                    <div class="feature-list">
+                        <div class="feature-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+                                <path d="M2 17h20"/>
+                            </svg>
+                            <div class="feature-item-text">
+                                <div class="feature-item-title">Smart Grids</div>
+                                <div class="feature-item-desc">Redes inteligentes que otimizam distribuição</div>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+                                <path d="M2 17h20"/>
+                            </svg>
+                            <div class="feature-item-text">
+                                <div class="feature-item-title">IoT & Sensores</div>
+                                <div class="feature-item-desc">Monitoramento automático e contínuo</div>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+                                <path d="M2 17h20"/>
+                            </svg>
+                            <div class="feature-item-text">
+                                <div class="feature-item-title">IA e Machine Learning</div>
+                                <div class="feature-item-desc">Previsão e otimização inteligente</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="content-image">
+                    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663175874071/FnsGQWebHyjzCwDnoFzhZu/section-tecnologia-GX5daPu65pFErednMayUZs.webp" alt="Tecnologias de Eficiência Energética">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Estatísticas -->
+    <section class="stats-section" id="dados">
+        <div class="container">
+            <div class="section-header">
+                <h2>Impacto da Eficiência Energética</h2>
+                <div class="divider"></div>
+            </div>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">50<span style="font-size: 1.5rem;">%</span></div>
+                    <div class="stat-label">Matriz Energética Renovável (Brasil 2024)</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">20<span style="font-size: 1.5rem;">%</span></div>
+                    <div class="stat-label">Potencial de Economia até 2030</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">4<span style="font-size: 1.5rem;">x</span></div>
+                    <div class="stat-label">Menos Emissões que Média Global</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">431<span style="font-size: 1.5rem;">M</span></div>
+                    <div class="stat-label">Toneladas de CO₂ em 2024</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dicas Práticas -->
+    <section class="tips-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Dicas Práticas de Eficiência</h2>
+                <p>Pequenas ações que fazem grande diferença</p>
+                <div class="divider"></div>
+            </div>
+            <div class="tips-grid">
+                <div class="tip-card">
+                    <div class="tip-header">
+                        <div class="tip-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="9"/>
+                                <path d="M12 6v6l4 2"/>
+                            </svg>
+                        </div>
+                        <div class="tip-content">
+                            <h3>Lâmpadas LED</h3>
+                        </div>
+                    </div>
+                    <p>Consomem até 80% menos energia que lâmpadas incandescentes e duram muito mais.</p>
+                    <span class="tip-savings">Até 80% de economia</span>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-header">
+                        <div class="tip-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="9"/>
+                                <path d="M12 6v6l4 2"/>
+                            </svg>
+                        </div>
+                        <div class="tip-content">
+                            <h3>Isolamento Térmico</h3>
+                        </div>
+                    </div>
+                    <p>Reduz perda de calor em até 30%, diminuindo necessidade de aquecimento e refrigeração.</p>
+                    <span class="tip-savings">Até 30% de economia</span>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-header">
+                        <div class="tip-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="9"/>
+                                <path d="M12 6v6l4 2"/>
+                            </svg>
+                        </div>
+                        <div class="tip-content">
+                            <h3>Painéis Solares</h3>
+                        </div>
+                    </div>
+                    <p>Geram energia limpa e renovável, reduzindo dependência da rede elétrica.</p>
+                    <span class="tip-savings">Até 90% de economia</span>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-header">
+                        <div class="tip-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="9"/>
+                                <path d="M12 6v6l4 2"/>
+                            </svg>
+                        </div>
+                        <div class="tip-content">
+                            <h3>Eletrodomésticos Eficientes</h3>
+                        </div>
+                    </div>
+                    <p>Equipamentos com selo Procel A consomem significativamente menos energia.</p>
+                    <span class="tip-savings">Até 40% de economia</span>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-header">
+                        <div class="tip-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="9"/>
+                                <path d="M12 6v6l4 2"/>
+                            </svg>
+                        </div>
+                        <div class="tip-content">
+                            <h3>Automação Residencial</h3>
+                        </div>
+                    </div>
+                    <p>Sensores e controle inteligente otimizam uso de energia em tempo real.</p>
+                    <span class="tip-savings">Até 25% de economia</span>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-header">
+                        <div class="tip-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="9"/>
+                                <path d="M12 6v6l4 2"/>
+                            </svg>
+                        </div>
+                        <div class="tip-content">
+                            <h3>Chuveiro Elétrico</h3>
+                        </div>
+                    </div>
+                    <p>Reduzir tempo de banho em 5 minutos economiza até 50 kWh por mês.</p>
+                    <span class="tip-savings">Até 50% de economia</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Comece sua Jornada para Eficiência Energética</h2>
+            <p>Cada ação conta. Seja você um consumidor residencial ou uma grande indústria, há sempre oportunidades para otimizar seu consumo de energia.</p>
+            <button class="btn" onclick="alert('Consultoria em breve!')">Solicitar Consultoria</button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contato">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <div class="footer-brand">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 2c1.1 0 2 .9 2 2v6h6c1.1 0 2 .9 2 2s-.9 2-2 2h-6v6c0 1.1-.9 2-2 2s-2-.9-2-2v-6H4c-1.1 0-2-.9-2-2s.9-2 2-2h6V4c0-1.1.9-2 2-2z"/>
+                        </svg>
+                        <span>EnergiaSmart</span>
+                    </div>
+                    <p class="footer-brand-desc">Transformando a forma como consumimos energia através da eficiência e inovação.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Links Rápidos</h4>
+                    <ul>
+                        <li><a href="#o-que-e">O que é Eficiência</a></li>
+                        <li><a href="#beneficios">Benefícios</a></li>
+                        <li><a href="#tecnologias">Tecnologias</a></li>
+                        <li><a href="#dados">Dados</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Recursos</h4>
+                    <ul>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Guias</a></li>
+                        <li><a href="#">Calculadora</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contato</h4>
+                    <div class="footer-contact">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                            <path d="M22 6l-10 7L2 6"/>
+                        </svg>
+                        <a href="mailto:contato@energiasmart.com">contato@energiasmart.com</a>
+                    </div>
+                    <div class="footer-contact">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                        </svg>
+                        <a href="tel:+5511999999999">+55 (11) 9999-9999</a>
+                    </div>
+                    <div class="footer-contact">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                            <circle cx="12" cy="10" r="3"/>
+                        </svg>
+                        <span>São Paulo, Brasil</span>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-divider">
+                <div class="footer-bottom">
+                    <p>&copy; 2024 EnergiaSmart. Todos os direitos reservados.</p>
+                    <div class="footer-links">
+                        <a href="#">Privacidade</a>
+                        <a href="#">Termos</a>
+                        <a href="#">Cookies</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Animate numbers on scroll
+        const observerOptions = {
+            threshold: 0.5
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && !entry.target.classList.contains('animated')) {
+                    entry.target.classList.add('animated');
+                    const number = parseInt(entry.target.textContent);
+                    let current = 0;
+                    const increment = number / 60;
+                    const timer = setInterval(() => {
+                        current += increment;
+                        if (current >= number) {
+                            entry.target.textContent = number;
+                            clearInterval(timer);
+                        } else {
+                            entry.target.textContent = Math.floor(current);
+                        }
+                    }, 30);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.stat-number').forEach(stat => {
+            observer.observe(stat);
+        });
+    </script>
+</body>
+</html>
